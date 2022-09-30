@@ -56,6 +56,10 @@
     opacity: 0.9;
 }
 
+#responsive-tweet-button {
+    display: none;
+}
+
 /*  --------------------------- */
 
 .leftbar-container_footer {
@@ -109,8 +113,9 @@
 }
 
 @media (max-width: 992px) { 
-    .leftbar-container_menu--item {
-        padding: 15px 0;
+    .leftbar-container_menu--item:hover {
+        background-color: transparent;
+        opacity: 0.8;
     }
     .leftbar-container_menu--item i { 
         font-size: 30px; 
@@ -127,4 +132,10 @@
         margin: 0;
     }
     .leftbar-container_menu--tweet { display: none;}
+    #responsive-tweet-button { 
+        display: block;
+        margin: 0;
+        width: 100%;
+    }
+    
 }
