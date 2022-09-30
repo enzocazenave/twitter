@@ -1,0 +1,9 @@
+.rightbar-container {
+    background-color: rgb(66, 66, 112);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: 500;
+    font-size: 50px;
+}

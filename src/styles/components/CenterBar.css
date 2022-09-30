@@ -1,6 +1,12 @@
-.centerbar {
-    border-left: 1px solid rgb(38, 38, 38);
-    border-right: 1px solid rgb(38, 38, 38);
+.centerbar-container {
+    height: 100vh;
+    border-left: 1px solid rgb(110, 110, 110);
+    border-right: 1px solid rgb(110, 110, 110);
+    background-color: rgb(102, 57, 57);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: 500;
+    font-size: 50px;
 }
-
-

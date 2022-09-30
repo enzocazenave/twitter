@@ -1,5 +1,9 @@
+import '../styles/components/RightBar.css';
+
 export const RightBar = () => {
     return (
-        <div className="text-center"></div>
+        <div>
+            RIGHT BAR
+        </div>
     )
 }
