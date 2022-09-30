@@ -1,9 +1,11 @@
-import '../styles/components/CenterBar.css'
+import '../styles/components/CenterBar.css';
+import { Nav, CreateTweet } from './CenterComponents/';
 
 export const CenterBar = () => {
     return (
-        <div>
-            CENTER BAR
-        </div>
+        <>
+            <Nav />
+            <CreateTweet />
+        </>
     )
 }

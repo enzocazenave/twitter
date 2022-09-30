@@ -1,12 +1,85 @@
 .centerbar-container {
-    height: 100vh;
     border-left: 1px solid rgb(110, 110, 110);
     border-right: 1px solid rgb(110, 110, 110);
-    background-color: rgb(102, 57, 57);
+    height: 100vh;
+}
+
+.centerbar-container_nav {
+    backdrop-filter: blur(10px);
+    padding: 15px 0 15px 12px;
+    margin-left: -12px;
+    margin-right: -12px;
     display: flex;
-    justify-content: center;
-    align-items: center;
     color: #fff;
-    font-weight: 500;
-    font-size: 50px;
+}
+
+.centerbar-container_nav--title {
+    padding: 0;
+    margin: 0;
+}
+
+.centerbar-container_createtweet {
+    display: flex;
+    column-gap: 15px;
+}
+
+.centerbar-container_createtweet--img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.centerbar-container_createtweet--form {
+    flex-grow: 1;
+}
+
+.centerbar-container_createtweet--form__input {
+    background-color: transparent;
+    border: 1px solid rgb(92, 90, 90);
+    border-radius: 5px;
+    color: #fff;
+    font-size: 18px;
+    outline: none;
+    resize: none;
+    width: 100%;
+    padding: 10px;
+}
+
+.centerbar-container_createtweet--form__separation {
+    color: #fff;
+}
+
+.centerbar-container_createtweet--form__buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.centerbar-container_createtweet--form__buttons---file {
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: rgb(29, 155, 240);
+    padding: 10px;
+}
+
+.centerbar-container_createtweet--form__buttons---file i {
+    margin-right: 10px;
+}
+
+.centerbar-container_createtweet--form__buttons---file:hover {
+    color: #fff;
+    background-color: rgb(29, 155, 240);
+    transition: all .5s;
+}
+
+.centerbar-container_createtweet--form__buttons---submit {
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    background-color: rgb(29, 155, 240);
+    color: #fff
 }
