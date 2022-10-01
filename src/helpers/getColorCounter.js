@@ -1,0 +1,1 @@
+export const getColorCounter = (characters) => { if (characters <= 93) return "rgb(0, 255, 0)"; if (characters <= 186) return "rgb(255, 255, 0)"; if (characters <= 280) return "rgb(255, 0, 0)"; }

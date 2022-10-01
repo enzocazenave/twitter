@@ -21,6 +21,8 @@
 .centerbar-container_createtweet {
     display: flex;
     column-gap: 15px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgb(110, 110, 110);
 }
 
 .centerbar-container_createtweet--img {
@@ -70,9 +72,7 @@
 }
 
 .centerbar-container_createtweet--form__buttons---file:hover {
-    color: #fff;
-    background-color: rgb(29, 155, 240);
-    transition: all .5s;
+    outline: 2px solid rgb(29, 155, 240);
 }
 
 .centerbar-container_createtweet--form__buttons---submit {
@@ -81,5 +81,16 @@
     border: none;
     outline: none;
     background-color: rgb(29, 155, 240);
-    color: #fff
+    color: #fff;
+    transition: opacity 0.3s;
+}
+
+.centerbar-container_createtweet--form__buttons---submit:hover {
+    opacity: 0.9;
+}
+
+.centerbar-container_createtweet--form__buttons---counter {
+    color: #fff;
+    margin: 0;
+    font-size: 20px;
 }
