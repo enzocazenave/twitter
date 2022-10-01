@@ -6,10 +6,10 @@ export const App = () => {
             <div className="col-2 leftbar-container">
                 <LeftBar />
             </div>
-            <div className="col-6 centerbar-container">
+            <div className="col centerbar-container">
                 <CenterBar />
             </div>
-            <div className="col-4 rightbar-container">
+            <div className="col-4 xs rightbar-container">
                 <RightBar />
             </div>
         </div>

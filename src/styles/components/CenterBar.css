@@ -2,23 +2,22 @@
     border-left: 1px solid rgb(110, 110, 110);
     border-right: 1px solid rgb(110, 110, 110);
     height: 100vh;
+    overflow: auto;
+    padding: 0;
 }
 
 .centerbar-container_nav {
+    position: fixed;
     backdrop-filter: blur(10px);
-    padding: 15px 0 15px 12px;
-    margin-left: -12px;
-    margin-right: -12px;
+    padding: 15px 0 12px 15px;
     display: flex;
     color: #fff;
 }
 
-.centerbar-container_nav--title {
-    padding: 0;
-    margin: 0;
-}
-
 .centerbar-container_createtweet {
+    /*margin-top: 70px;*/
+    margin-top: 5px;
+    padding: 15px;
     display: flex;
     column-gap: 15px;
     padding-bottom: 16px;
@@ -94,3 +93,78 @@
     margin: 0;
     font-size: 20px;
 }
+
+/*! TWEET */
+
+
+.centerbar-container_tweet {
+    display: flex;
+    border-bottom: 1px solid rgb(110, 110, 110);
+    padding: 15px;
+}
+
+.centerbar-container_tweet--img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.centerbar-container_tweet--post {
+    flex-grow: 1;
+    padding: 0 15px;
+}
+
+.centerbar-container_tweet--post__user---name {
+    color: #fff;
+    font-weight: 500;
+    margin-right: 5px;
+}
+
+.centerbar-container_tweet--post__user---username {
+    color: rgb(155, 152, 152)
+}
+
+.centerbar-container_tweet--post__text {
+    color: #fff;
+}
+
+.centerbar-container_tweet--post__actions {
+    margin-bottom: 5px;
+}
+
+.centerbar-container_tweet--post__actions---action {
+    background-color: transparent;
+    border: none;
+    margin-right: 20px;
+    color: rgb(110, 110, 110);
+    transition: all .4s;
+}
+
+.centerbar-container_tweet--post__actions---action span {
+    margin-left: 10px;
+}
+
+#action-comment:hover {
+    color: rgb(29, 155, 240);   
+    filter: drop-shadow(0px 0px 10px rgb(29, 155, 240));
+}
+
+#action-retweet:hover {
+    color: rgb(115, 238, 104);
+    filter: drop-shadow(0px 0px 10px rgb(115, 238, 104));
+
+}
+
+#action-like:hover {
+    color: rgb(241, 74, 74);
+    filter: drop-shadow(0px 0px 10px rgb(241, 74, 74));
+
+}
+
+#action-share:hover {
+    color: rgb(29, 155, 240);    
+    filter: drop-shadow(0px 0px 10px rgb(29, 155, 240));
+}
+
+::-webkit-scrollbar {display: none;}

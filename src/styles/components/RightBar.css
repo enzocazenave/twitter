@@ -6,3 +6,9 @@
     font-weight: 500;
     font-size: 50px;
 }
+
+@media (max-width: 992px) { 
+    .rightbar-container {
+        display: none;
+    }
+}

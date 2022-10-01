@@ -1,11 +1,25 @@
 import '../styles/components/CenterBar.css';
-import { Nav, CreateTweet } from './CenterComponents/';
+import { Nav, CreateTweet, Tweet } from './CenterComponents/';
 
 export const CenterBar = () => {
     return (
         <>
-            <Nav />
+            
             <CreateTweet />
+            <Tweet />
+            <Tweet />
+            <Tweet />
+            <Tweet />
+            <Tweet />
+            <Tweet />
+            <Tweet />
+            <Tweet />
+            <Tweet />
+            <Tweet />
+            <Tweet />
+            <Tweet />
+            <Tweet />
+            <Tweet />
         </>
     )
 }
