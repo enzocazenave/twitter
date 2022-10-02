@@ -1,6 +1,6 @@
 export const Tweet = () => {
     return (
-        <div className="centerbar-container_tweet">
+        <div className="centerbar-container_tweet fadeIn">
             <img className="centerbar-container_tweet--img" src={ "https://avatars.githubusercontent.com/u/102680110?v=4" } />
             <div className="centerbar-container_tweet--post">
                 <div className="centerbar-container_tweet--post__user">

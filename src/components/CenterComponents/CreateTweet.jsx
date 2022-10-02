@@ -7,7 +7,7 @@ export const CreateTweet = () => {
     const [focus, setFocus] = useState(false);
     
     return (
-        <div className="centerbar-container_createtweet">
+        <div className="centerbar-container_createtweet fadeIn">
             <img className="centerbar-container_createtweet--img" src={ "https://avatars.githubusercontent.com/u/102680110?v=4" } />
             <form className="centerbar-container_createtweet--form">
                 <textarea 
@@ -23,7 +23,7 @@ export const CreateTweet = () => {
                 ></textarea>
                 <hr className="centerbar-container_createtweet--form__separation"/>
                 <div className="centerbar-container_createtweet--form__buttons">
-                    <button className="centerbar-container_createtweet--form__buttons---file"><i className="fas fa-images"></i>Wanna add an image?</button> 
+                    <button className="centerbar-container_createtweet--form__buttons---file"><i className="fas fa-images"></i><span>Wanna add an image?</span></button> 
                     {
                         focus &&
                             <p className="centerbar-container_createtweet--form__buttons---counter" style={{ color: getColorCounter(tweet.length) }}>{ tweet.length }/280</p>
