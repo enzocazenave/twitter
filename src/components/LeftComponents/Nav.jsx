@@ -21,7 +21,7 @@ export const Nav = () => {
                 <i className="fas fa-bell"></i>
                 <a className="leftbar-container_menu--item__title" href="#">Notifications</a>
             </li>
-            <li onClick={ () => redirect('/profile') } className={`leftbar-container_menu--item ${ (pathname == '/profile') && 'leftbar-container_menu--item__selected' }`}>
+            <li onClick={ () => redirect('/profile/chikicazenave') } className={`leftbar-container_menu--item ${ (pathname == '/profile') && 'leftbar-container_menu--item__selected' }`}>
                 <i className="fas fa-user-alt"></i>
                 <a className="leftbar-container_menu--item__title" href="#">Profile</a>
             </li>

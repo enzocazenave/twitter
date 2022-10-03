@@ -1,56 +1,14 @@
+import { HomePage, ExplorePage, NotificationsPage, ProfilePage } from '../pages';
 import '../styles/components/CenterBar.css';
-import { Nav, CreateTweet, Tweet, SearchInput, SearchedUser, Notification } from './CenterComponents/';
 
 export const CenterBar = () => {
-    const pathname = window.location.pathname;
+    const pathname = window.location.pathname.split('/')[1];
     return (
         <>
-            {
-                (pathname == '/home') &&
-                    <>
-                        <CreateTweet />
-                        <Tweet />
-                        <Tweet />
-                        <Tweet />
-                        <Tweet />
-                        <Tweet />
-                        <Tweet />
-                        <Tweet />
-                        <Tweet />
-                        <Tweet />
-                        <Tweet />
-                        <Tweet />
-                        <Tweet />
-                        <Tweet />
-                        <Tweet />
-                    </>
-            }
-
-            {
-                (pathname == '/explore') &&
-                    <>
-                        <SearchInput />
-                        <SearchedUser />
-                        <SearchedUser />
-                        <SearchedUser />
-                        <SearchedUser />
-                    </>
-            }
-
-            {
-                (pathname == '/notifications') &&
-                    <>
-                        <Notification />
-                        <Notification />
-                        <Notification />
-                        <Notification />
-                        <Notification />
-                        <Notification />
-                        <Notification />
-                        <Notification />
-                    </>
-            }
-            
+            { (pathname == 'home') && <HomePage /> }
+            { (pathname == 'explore') && <ExplorePage /> }
+            { (pathname == 'notifications') && <NotificationsPage /> }
+            { (pathname == 'profile') && <ProfilePage /> }
         </>
     )
 }

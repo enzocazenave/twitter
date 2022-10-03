@@ -182,19 +182,6 @@
     cursor: pointer;
 }
 
-@media (max-width: 440px) { 
-    .centerbar-container_createtweet--form__buttons---file span {
-        display: none;
-    }
-    .centerbar-container_createtweet--form__buttons---file i {
-        font-size: 20px;
-    }
-    .centerbar-container_tweet--post__actions---action {
-        font-size: 13px;
-        margin-right: 10px;
-    }
-}
-
 .centerbar-container_search--input__container {
     display: flex;
     padding: 5px;
@@ -312,4 +299,134 @@
     font-size: 13px;
     margin: 0;
     padding: 0;
+}
+
+.centerbar-container_userprofile--banner {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.centerbar-container_userprofile--info {
+    padding: 20px;
+    
+}
+
+.centerbar-container_userprofile--info__edit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.centerbar-container_userprofile--edit__img {
+    width: 133px;
+    height: 133px;
+    border-radius: 50%;
+    object-fit: cover;
+    outline: 5px solid rgb(21, 32, 43);
+    margin-top: -15%;
+}
+
+.centerbar-container_userprofile--edit__button {
+    border-radius: 20px;
+    background-color: transparent;
+    padding: 9px;
+    color: #fff;
+    border: 1px solid rgb(83, 100, 113);
+    font-weight: 600;
+    margin-bottom: 12px;
+    font-size: 15px;
+    line-height: 15px;
+    transition: background .3s;
+}
+
+.centerbar-container_userprofile--edit__button:hover {
+    background-color: rgb(35, 48, 61);
+    cursor: pointer;
+}
+
+.centerbar-container_userprofile--info__user {
+    margin-top: 4px;
+    
+}
+
+.centerbar-container_userprofile--info__user---name {
+    color: #fff;
+    font-size: 25px;
+    margin: 0;
+}
+
+.centerbar-container_userprofile--info__user---username {
+    color: rgb(155, 152, 152);
+    margin-bottom: 12px;
+}
+
+.centerbar-container_userprofile--info__user---bio {
+    color: #fff;
+    font-size: 15px;
+}
+
+.centerbar-container_userprofile--info__data {
+    display: flex;
+}
+
+.centerbar-container_userprofile--info__data---info {
+    color: rgb(155, 152, 152);
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.centerbar-container_userprofile--info__data---info___text {
+    margin: 0 0 0 10px;
+}
+
+.centerbar-container_userprofile--info__followers {
+    display: flex;
+    margin-top: 10px;
+}
+
+.centerbar-container_userprofile--info__followers---text {
+    color: rgb(155, 152, 152);
+    margin-right: 20px;
+}
+
+.centerbar-container_userprofile--info__followers---text b {
+    color: #fff
+}
+
+.centerbar-container_userprofile--info__tweets {
+    color: #fff;
+    background-color: rgb(39, 53, 67);
+    margin: 15px -20px -20px;
+    padding: 5px;
+    text-align: center;
+    border-bottom: 1px solid rgb(110, 110, 110);
+    border-top: 1px solid rgb(110, 110, 110);
+}
+
+
+@media (max-width: 440px) { 
+    .centerbar-container_createtweet--form__buttons---file span {
+        display: none;
+    }
+    .centerbar-container_createtweet--form__buttons---file i {
+        font-size: 20px;
+    }
+    .centerbar-container_tweet--post__actions---action {
+        font-size: 13px;
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .centerbar-container_userprofile--edit__img {
+        margin-top: -20%;
+    }
+}
+
+@media (max-width: 560px) {
+    .centerbar-container_userprofile--edit__img {
+        margin-top: -30%;
+    }   
 }

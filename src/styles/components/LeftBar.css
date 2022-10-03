@@ -123,11 +123,17 @@
         background-color: transparent;
         opacity: 0.8;
     }
+    .leftbar-container_menu--item {
+        margin-bottom: 15px;
+    }
     .leftbar-container_menu--item i { 
         font-size: 30px; 
         margin: 0;
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .leftbar-container_menu--item__title { display: none; }
     .leftbar-container_footer--user { display: none; }
