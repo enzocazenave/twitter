@@ -30,7 +30,6 @@ export const Nav = () => {
                 <a className="leftbar-container_menu--item__title" href="#">Settings</a>
             </li>
             <button className="leftbar-container_menu--tweet" type="button">Tweet</button>
-            <button className="leftbar-container_menu--tweet" id="responsive-tweet-button" type="button"><i className="fa fa-edit"></i></button>
         </nav>
     )
 }

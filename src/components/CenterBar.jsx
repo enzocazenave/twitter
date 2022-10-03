@@ -1,5 +1,5 @@
 import '../styles/components/CenterBar.css';
-import { Nav, CreateTweet, Tweet, SearchInput, SearchedUser } from './CenterComponents/';
+import { Nav, CreateTweet, Tweet, SearchInput, SearchedUser, Notification } from './CenterComponents/';
 
 export const CenterBar = () => {
     const pathname = window.location.pathname;
@@ -34,6 +34,20 @@ export const CenterBar = () => {
                         <SearchedUser />
                         <SearchedUser />
                         <SearchedUser />
+                    </>
+            }
+
+            {
+                (pathname == '/notifications') &&
+                    <>
+                        <Notification />
+                        <Notification />
+                        <Notification />
+                        <Notification />
+                        <Notification />
+                        <Notification />
+                        <Notification />
+                        <Notification />
                     </>
             }
             

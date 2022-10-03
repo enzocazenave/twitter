@@ -66,10 +66,6 @@
     opacity: 0.9;
 }
 
-#responsive-tweet-button {
-    display: none;
-}
-
 /*  --------------------------- */
 
 .leftbar-container_footer {
@@ -142,10 +138,4 @@
         margin: 0;
     }
     .leftbar-container_menu--tweet { display: none;}
-    #responsive-tweet-button { 
-        display: block;
-        margin: 0;
-        width: 100%;
-    }
-    
 }

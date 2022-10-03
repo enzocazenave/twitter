@@ -232,9 +232,8 @@
 .centerbar-container_searcheduser {
     display: flex;
     align-items: center;
-    
     padding: 15px;
-    transition: all .4s;
+    transition: background .3s;
 }
 
 .centerbar-container_searcheduser:hover {
@@ -270,4 +269,47 @@
 .centerbar-container_searcheduser--user__biography {
     margin: 0;
     color: rgb(117, 128, 139);
+}
+
+.centerbar-container_notification {
+    padding: 20px;
+    border-bottom: 1px solid rgb(110, 110, 110);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background .3s;
+}
+
+.centerbar-container_notification:hover {
+    background-color: rgb(39, 53, 67);
+    cursor: pointer;
+}
+
+.notification-icon {
+    padding-right: 20px;
+    font-size: 25px;
+    color: #fff
+}
+
+.notification-info {
+    flex-grow: 1;
+}
+
+.centerbar-container_notification--img {
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.centerbar-container_notification--user {
+    color: #fff;
+    margin: 7px 0;
+}
+
+.centerbar-container_notification--tweet {
+    color: #fff;
+    font-size: 13px;
+    margin: 0;
+    padding: 0;
 }
