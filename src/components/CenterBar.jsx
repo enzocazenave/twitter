@@ -1,4 +1,4 @@
-import { HomePage, ExplorePage, NotificationsPage, ProfilePage } from '../pages';
+import { HomePage, ExplorePage, NotificationsPage, ProfilePage, SettingsPage } from '../pages';
 import '../styles/components/CenterBar.css';
 
 export const CenterBar = () => {
@@ -9,6 +9,7 @@ export const CenterBar = () => {
             { (pathname == 'explore') && <ExplorePage /> }
             { (pathname == 'notifications') && <NotificationsPage /> }
             { (pathname == 'profile') && <ProfilePage /> }
+            { (pathname == 'settings') && <SettingsPage /> }
         </>
     )
 }

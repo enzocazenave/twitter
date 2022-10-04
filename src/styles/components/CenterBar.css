@@ -405,6 +405,40 @@
     border-top: 1px solid rgb(110, 110, 110);
 }
 
+.centerbar-container_accountinformation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background .4s;
+}
+
+.centerbar-container_accountinformation--button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.centerbar-container_accountinformation:hover {
+    background-color: rgb(35, 48, 61);
+    cursor: pointer;
+}
+
+.centerbar-container_accountinformation i {
+    color: rgb(155, 152, 152);
+    margin: 30px;
+}
+
+.centerbar-container_accountinformation--text__title {
+    color: #fff;
+    margin: 0;
+}
+
+.centerbar-container_accountinformation--text__description{
+    color: rgb(155, 152, 152);
+    margin: 0;
+    font-size: 13px;
+}
+
 
 @media (max-width: 440px) { 
     .centerbar-container_createtweet--form__buttons---file span {
