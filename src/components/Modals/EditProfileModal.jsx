@@ -14,7 +14,7 @@ Modal.setAppElement('#root');
 export const EditProfileModal = () => {
     return (
         <Modal 
-            isOpen={ true }
+            isOpen={ false }
             style={ modalStyle }
             className="modal"
             overlayClassName="modal-background"
