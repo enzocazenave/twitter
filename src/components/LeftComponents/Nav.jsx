@@ -1,7 +1,10 @@
+import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { UiContext } from '../../context/UiContext';
 
 export const Nav = () => {
 
+    const { SHOW_TWEET_MODAL } = useContext(UiContext);
     const pathname = window.location.pathname.split('/')[1];
     const navigate = useNavigate();
 
@@ -29,7 +32,15 @@ export const Nav = () => {
                 <i className="fas fa-cog"></i>
                 <a className="leftbar-container_menu--item__title" href="#">Settings</a>
             </li>
-            <button className="leftbar-container_menu--tweet" type="button">Tweet</button>
+            <button 
+                className="leftbar-container_menu--tweet" 
+                type="button"
+                onClick={ SHOW_TWEET_MODAL }
+            >
+                Tweet
+            </button>
         </nav>
     )
 }
+
+

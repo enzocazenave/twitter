@@ -1,11 +1,23 @@
+import { useContext } from "react"
+import { UiContext } from "../../context/UiContext"
+
 export const UserProfile = () => {
+
+    const { SHOW_EDIT_MODAL } = useContext(UiContext);
+
     return (
         <div className="centerbar-container_userprofile fadeIn">
             <img className="centerbar-container_userprofile--banner" src={ "https://pbs.twimg.com/profile_banners/970747597068689408/1598968559/600x200" } />
             <div className="centerbar-container_userprofile--info">
                 <div className="centerbar-container_userprofile--info__edit">
                     <img className="centerbar-container_userprofile--edit__img" src={ "https://avatars.githubusercontent.com/u/102680110?v=4" } />
-                    <button className="centerbar-container_userprofile--edit__button" type="button">Edit profile</button>
+                    <button 
+                        className="centerbar-container_userprofile--edit__button" 
+                        type="button"
+                        onClick={ SHOW_EDIT_MODAL }
+                    >
+                        Edit profile
+                    </button>
                 </div>
 
                 <div className="centerbar-container_userprofile--info__user">

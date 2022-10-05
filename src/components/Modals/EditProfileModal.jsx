@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import Modal from 'react-modal';
+import { UiContext } from '../../context/UiContext';
 import '../../styles/components/EditProfileModal.css';
 
 const modalStyle = {
@@ -21,6 +22,7 @@ const initialState = {
 
 export const EditProfileModal = () => {
 
+    const { showEditModal, HIDE_EDIT_MODAL } = useContext(UiContext);
     const [focus, setFocus] = useState(initialState);
 
     const setInputFocus = (input, active) => {
@@ -32,16 +34,28 @@ export const EditProfileModal = () => {
 
     return (
         <Modal 
-            isOpen={ true }
+            isOpen={ showEditModal }
             style={ modalStyle }
             className="modal"
             overlayClassName="modal-background"
             closeTimeoutMS={ 200 }
         >
             <div className="editmodal-nav">
-                <button className="editmodal-nav_close" type="button"><i className="fa fa-close"></i></button>
+                <button 
+                    className="editmodal-nav_close" 
+                    type="button"
+                    onClick={ HIDE_EDIT_MODAL }
+                >
+                    <i className="fa fa-close"></i>
+                </button>
                 <h4 className="editmodal-nav_title">Edit profile</h4>
-                <button className="editmodal-nav_edit" type="button">Save</button>
+                <button 
+                    className="editmodal-nav_edit" 
+                    type="button"
+                    onClick={ HIDE_EDIT_MODAL }
+                >
+                    Save
+                </button>
             </div>
 
             <div className="editmodal-banner">

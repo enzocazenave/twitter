@@ -108,8 +108,10 @@
 
 .editmodal-profile_inputs--containerFOCUS {
     border: 1px solid rgb(29, 155, 240);
+    transition: border .3s;
 }
 
 .editmodal-profile_inputs--container__labelFOCUS {
     color: rgb(29, 155, 240);
+    transition: color .3s;
 }

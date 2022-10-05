@@ -1,7 +1,7 @@
 export const AccountInformation = () => {
     return (
         <>
-            <div className="centerbar-container_accountinformation">
+            <div className="centerbar-container_accountinformation fadeIn">
                 <div className="centerbar-container_accountinformation--button">
                     <i className="far fa-user"></i>
                     <div className="centerbar-container_accountinformation--text">
@@ -12,7 +12,7 @@ export const AccountInformation = () => {
                 <i className="fas fa-angle-right"></i>   
             </div>
 
-            <div className="centerbar-container_accountinformation">
+            <div className="centerbar-container_accountinformation fadeIn">
                 <div className="centerbar-container_accountinformation--button">
                     <i className="fas fa-key"></i>
                     <div className="centerbar-container_accountinformation--text">
@@ -23,7 +23,7 @@ export const AccountInformation = () => {
                 <i className="fas fa-angle-right"></i>   
             </div>
 
-            <div className="centerbar-container_accountinformation">
+            <div className="centerbar-container_accountinformation fadeIn">
                 <div className="centerbar-container_accountinformation--button">
                     <i className="fas fa-heart-broken"></i>
                     <div className="centerbar-container_accountinformation--text">
@@ -34,7 +34,7 @@ export const AccountInformation = () => {
                 <i className="fas fa-angle-right"></i>   
             </div>
 
-            <div className="centerbar-container_accountinformation">
+            <div className="centerbar-container_accountinformation fadeIn">
                 <div className="centerbar-container_accountinformation--button">
                     <i className="fas fa-keyboard"></i>
                     <div className="centerbar-container_accountinformation--text">
