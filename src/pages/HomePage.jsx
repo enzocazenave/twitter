@@ -18,6 +18,15 @@ export const HomePage = () => {
             <Tweet />
             <Tweet />
             <Tweet />
+            <Tweet />
+            <Tweet />
+            <Tweet />
+            <Tweet />
+            <Tweet />
+            <Tweet />
+            <Tweet />
+            <Tweet />
+            <Tweet />
         </>
     )
 }
