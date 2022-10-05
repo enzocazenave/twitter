@@ -31,8 +31,6 @@ export const EditProfileModal = () => {
                     <button className="editmodal-banner_actions--action"><i className="fa fa-camera"></i></button>
                     <button className="editmodal-banner_actions--action"><i className="fa fa-close"></i></button>
                 </div>
-
-                
             </div>
 
             <div className="editmodal-profile">
