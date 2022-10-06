@@ -1,5 +1,6 @@
 #root {
     background-color: rgb(21, 32, 43);
+    scroll-behavior: smooth;
 }
 
 .container {
