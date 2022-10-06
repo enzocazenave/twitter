@@ -68,6 +68,23 @@
     cursor: pointer;
 }
 
+@media (max-width: 1200px) {
+    .rightbar-container_usertofollow--user__img {
+        width: 40px;
+        height: 40px;
+    }
+    .rightbar-container_usertofollow--user__data---name {
+        font-size: 14px;
+    }
+    .rightbar-container_usertofollow--user__data---username {
+        font-size: 14px;
+    }
+    .rightbar-container_usertofollow--follow {
+        font-size: 12px;
+        padding: 3px 10px;
+    }
+}
+
 @media (max-width: 992px) { 
     .rightbar-container {
         display: none;
