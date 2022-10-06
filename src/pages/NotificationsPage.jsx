@@ -1,16 +1,22 @@
+import { useEffect } from "react";
 import { Notification } from "../components/CenterComponents"
 
 export const NotificationsPage = () => {
-  return (
-    <>
-        <Notification />
-        <Notification />
-        <Notification />
-        <Notification />
-        <Notification />
-        <Notification />
-        <Notification />
-        <Notification />
-    </>
-  )
+
+    useEffect(() => {
+        document.title = 'Notifications / Twitter';
+    }, []);
+
+    return (
+        <>
+            <Notification />
+            <Notification />
+            <Notification />
+            <Notification />
+            <Notification />
+            <Notification />
+            <Notification />
+            <Notification />
+        </>
+    )
 }
