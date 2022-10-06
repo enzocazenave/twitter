@@ -1,9 +1,22 @@
 .rightbar-container {
     display: flex;
+    flex-direction: column;
     color: #fff;
     font-weight: 500;
-    font-size: 50px;
     padding: 20px 30px;
+}
+
+.rightbar-container_text {
+    color: rgb(155,155,152);
+    font-weight: 350;
+    font-size: 12px;
+    line-height: 20px;
+    display: inline-block;
+    margin: 0 8px 0 0;
+}
+
+.rightbar-container_textcontainer {
+    padding: 10px;
 }
 
 .rightbar-container_whofollow {
