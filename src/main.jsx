@@ -7,10 +7,8 @@ import './styles/index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
-    <div className="container">
       <UiProvider>
         <AppRouter />
       </UiProvider>
-    </div>
   </BrowserRouter>
 )
