@@ -9,13 +9,63 @@
 .rightbar-container_whofollow {
     background-color: rgb(30, 39, 50);
     height: fit-content;
-    max-height: 400px;
+    max-height: 430px;
     border-radius: 20px;
+    width: 100%;
+    padding: 20px 0;
 }
 
 .rightbar-container_whofollow--title {
     font-size: 20px;
-        
+    padding: 0 0 0 20px;
+}
+
+.rightbar-container_usertofollow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    transition: background .4s;
+}
+
+.rightbar-container_usertofollow:hover {
+    background-color: rgb(36, 46, 59);
+    cursor: pointer;
+}
+
+.rightbar-container_usertofollow--user__img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.rightbar-container_usertofollow--user {
+    display: flex;
+}
+
+.rightbar-container_usertofollow--user__data---name {
+    margin: 0;
+    font-size: 15px;
+}
+
+.rightbar-container_usertofollow--user__data---username {
+    margin: 0;
+    font-size: 15px;
+    color: rgb(155,155,152);
+}
+
+.rightbar-container_usertofollow--follow {
+    border: none;
+    border-radius: 15px;
+    padding: 3px 15px;
+    transition: opacity .4s;
+    font-size: 15px;
+}
+
+.rightbar-container_usertofollow--follow:hover {
+    opacity: 0.8;
+    cursor: pointer;
 }
 
 @media (max-width: 992px) { 

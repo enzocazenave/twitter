@@ -7,6 +7,10 @@ export const RightBar = () => {
             <div className="rightbar-container_whofollow">
                 <h4 className="rightbar-container_whofollow--title">Who to follow</h4>
                 <UserToFollow />
+                <UserToFollow />
+                <UserToFollow />
+                <UserToFollow />
+                <UserToFollow />
             </div>
         </>
     )
