@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect } from 'react';
 
 export const LoginPage = () => {
 
@@ -7,6 +7,8 @@ export const LoginPage = () => {
     }, []);
 
     return (
-        <div>LoginPage</div>
+        <div className="loginpage-container">
+            
+        </div>
     )
 }

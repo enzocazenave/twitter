@@ -4,7 +4,7 @@ import { LoginPage, RegisterPage } from '../pages';
 
 export const AppRouter = () => {
 
-    const auth = true;
+    const auth = false;
 
     return (
         <Routes>
