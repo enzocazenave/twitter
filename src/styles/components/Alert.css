@@ -1,0 +1,14 @@
+.alert-container-danger {
+    width: 100%;
+    background-color: rgb(234, 116, 116);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid rgb(217, 70, 70);
+}
+
+.alert-container-danger_msg {
+    margin: 0 0 0 10px;
+    color: rgb(0, 0, 0);
+}

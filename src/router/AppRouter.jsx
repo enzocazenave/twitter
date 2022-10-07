@@ -1,15 +1,23 @@
+import { useContext } from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
 import { App } from '../App';
-import { LoginPage, RegisterPage } from '../pages';
+import { AuthContext } from '../context/AuthContext';
+import { LoginPage, RegisterPage, LoadingPage } from '../pages';
 
 export const AppRouter = () => {
 
-    const auth = true;
+    const { USER, ON_CHECKING } = useContext(AuthContext);
+
+    if (ON_CHECKING) {
+        return (
+            <LoadingPage />
+        )
+    }   
 
     return (
         <Routes>
             {
-                (auth)
+                (USER.id)
                 ? (
                     <>
                         <Route path="/home" element={ <App  /> } />
