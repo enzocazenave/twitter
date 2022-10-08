@@ -1,6 +1,8 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Modal from 'react-modal';
+import { AuthContext } from '../../context/AuthContext';
 import { UiContext } from '../../context/UiContext';
+import { useForm } from '../../hooks/useForm';
 import '../../styles/components/EditProfileModal.css';
 
 const modalStyle = {
@@ -20,10 +22,36 @@ const initialState = {
     website: false
 }
 
+const initialForm = {
+      name: '',
+      bio: '',
+      location: '',
+      website: ''
+}
+
 export const EditProfileModal = () => {
 
     const { showEditModal, HIDE_EDIT_MODAL } = useContext(UiContext);
+    const { USER } = useContext(AuthContext);
     const [focus, setFocus] = useState(initialState);
+
+    const [values, setValues] = useState({ 
+        name: USER.name, 
+        bio: USER.bio || '' ,
+        location: USER.location || '',
+        website: USER.website || ''
+    });
+
+    const setInputvalues = ({ target }) => {
+        const { name, value } = target;
+
+        console.log(name, value)
+
+        setValues({
+            ...values,
+            [ name ]: value
+        });
+    }
 
     const setInputFocus = (input, active) => {
         setFocus({
@@ -58,14 +86,24 @@ export const EditProfileModal = () => {
                 </button>
             </div>
 
-            <div className="editmodal-banner">
+            <div 
+                className="editmodal-banner" 
+                style={{
+                    background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${ USER.profile_banner || 'https://fondosmil.com/fondo/9910.jpg' })`,
+                }}
+            >
                 <div className="editmodal-banner_actions">
                     <button className="editmodal-banner_actions--action"><i className="fa fa-camera"></i></button>
                     <button className="editmodal-banner_actions--action"><i className="fa fa-close"></i></button>
                 </div>
             </div>
 
-            <div className="editmodal-profile">
+            <div 
+                className="editmodal-profile"
+                style={{
+                    background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${ USER.profile_img || 'https://d500.epimg.net/cincodias/imagenes/2016/07/04/lifestyle/1467646262_522853_1467646344_noticia_normal.jpg' })`,
+                }}
+            >
                 <div className="editmodal-banner_actions">
                     <button className="editmodal-banner_actions--action"><i className="fa fa-camera"></i></button>
                 </div>
@@ -83,7 +121,9 @@ export const EditProfileModal = () => {
                         onBlur={ () => setInputFocus('name', false) }
                         className="editmodal-profile_inputs--container__input" 
                         type="text"
-                        value="Chiki Cazenave"
+                        name="name"
+                        value={ values.name }
+                        onChange={ setInputvalues }
                     />  
                 </div>
                 <div className={`${ focus.bio && 'editmodal-profile_inputs--containerFOCUS' } editmodal-profile_inputs--container`}>
@@ -97,7 +137,9 @@ export const EditProfileModal = () => {
                         onBlur={ () => setInputFocus('bio', false) }
                         className="editmodal-profile_inputs--container__input" 
                         type="text"
-                        value="Martin Guemes Hockey Club🏑🔰 | Ig: chikicazenave_ | Enzo Cazenave | CABJ"
+                        name="bio"
+                        value={ values.bio }
+                        onChange={ setInputvalues }
                     ></textarea> 
                 </div>
                 <div className={`${ focus.location && 'editmodal-profile_inputs--containerFOCUS' } editmodal-profile_inputs--container`}>
@@ -111,7 +153,9 @@ export const EditProfileModal = () => {
                         onBlur={ () => setInputFocus('location', false) }
                         className="editmodal-profile_inputs--container__input" 
                         type="text"
-                        value="Quilmes, Argentina"
+                        name="location"
+                        value={ values.location }
+                        onChange={ setInputvalues }
                     />  
                 </div>
                 <div className={`${ focus.website && 'editmodal-profile_inputs--containerFOCUS' } editmodal-profile_inputs--container`}>
@@ -125,6 +169,9 @@ export const EditProfileModal = () => {
                         onBlur={ () => setInputFocus('website', false) }
                         className="editmodal-profile_inputs--container__input" 
                         type="text"
+                        name="website"
+                        value={ values.website }
+                        onChange={ setInputvalues }
                     />  
                 </div>
             </div>

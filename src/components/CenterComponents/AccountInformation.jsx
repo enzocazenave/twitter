@@ -1,4 +1,11 @@
+import { useAuthContext } from "../../hooks/useAuthContext"
+
 export const AccountInformation = () => {
+
+    const { startLogout } = useAuthContext();
+
+    const logout = () => startLogout();
+    
     return (
         <>
             <div className="centerbar-container_accountinformation fadeIn">
@@ -29,6 +36,17 @@ export const AccountInformation = () => {
                     <div className="centerbar-container_accountinformation--text">
                         <p className="centerbar-container_accountinformation--text__title">Deactivate your account</p>
                         <p className="centerbar-container_accountinformation--text__description">Find out how you can deactivate your account.</p>
+                    </div>
+                </div> 
+                <i className="fas fa-angle-right"></i>   
+            </div>
+
+            <div className="centerbar-container_accountinformation fadeIn" onClick={ logout }>
+                <div className="centerbar-container_accountinformation--button">
+                    <i className="fas fa-sign-out-alt"></i>
+                    <div className="centerbar-container_accountinformation--text">
+                        <p className="centerbar-container_accountinformation--text__title">Logout</p>
+                        <p className="centerbar-container_accountinformation--text__description">Click  to logout of your account.</p>
                     </div>
                 </div> 
                 <i className="fas fa-angle-right"></i>   

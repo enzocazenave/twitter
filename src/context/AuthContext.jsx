@@ -3,7 +3,7 @@ import { createContext, useState } from 'react';
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-    
+
     const [user, setUser] = useState({});
     const [onChecking, setOnChecking] = useState(false);
     const [error, setError] = useState("");
@@ -20,7 +20,7 @@ export const AuthProvider = ({ children }) => {
             value={{
                 SET_USER,
                 SET_CHECKING,
-                SET_ERROR_MESSAGE,
+                SET_ERROR_MESSAGE,                
                 ON_CHECKING,
                 ERROR,
                 USER   

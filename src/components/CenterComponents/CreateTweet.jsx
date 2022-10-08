@@ -1,14 +1,17 @@
 import { getColorCounter } from '../../helpers/getColorCounter';
 import { useState } from 'react';
+import { useContext } from 'react';
+import { AuthContext } from '../../context/AuthContext';
 
 export const CreateTweet = () => {
 
+    const { USER } = useContext(AuthContext);
     const [tweet, setTweet] = useState("");
     const [focus, setFocus] = useState(false);
     
     return (
         <div className="centerbar-container_createtweet fadeIn">
-            <img className="centerbar-container_createtweet--img" src={ "https://avatars.githubusercontent.com/u/102680110?v=4" } />
+            <img className="centerbar-container_createtweet--img" src={ USER.profile_img || 'https://d500.epimg.net/cincodias/imagenes/2016/07/04/lifestyle/1467646262_522853_1467646344_noticia_normal.jpg' } />
             <form className="centerbar-container_createtweet--form">
                 <textarea 
                     placeholder="What's happening?" 

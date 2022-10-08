@@ -1,12 +1,16 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
 import { App } from '../App';
 import { AuthContext } from '../context/AuthContext';
+import { useAuthContext } from '../hooks/useAuthContext';
 import { LoginPage, RegisterPage, LoadingPage } from '../pages';
 
 export const AppRouter = () => {
 
-    const { USER, ON_CHECKING } = useContext(AuthContext);
+    const { ON_CHECKING, USER } = useContext(AuthContext);
+    const { checkAuthToken } = useAuthContext();
+
+    useEffect(() => { checkAuthToken(); }, []);
 
     if (ON_CHECKING) {
         return (
