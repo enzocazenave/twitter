@@ -5,3 +5,4 @@ export * from './SearchedUser';
 export * from './Notification';
 export * from './UserProfile';
 export * from './AccountInformation';
+export * from './UserProfiles';

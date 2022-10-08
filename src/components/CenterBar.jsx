@@ -1,4 +1,4 @@
-import { HomePage, ExplorePage, NotificationsPage, ProfilePage, SettingsPage } from '../pages';
+import { HomePage, ExplorePage, NotificationsPage, ProfilePage, SettingsPage, ProfilesPage } from '../pages';
 import { TweetModal, EditProfileModal } from './Modals/';
 import '../styles/components/CenterBar.css';
 
@@ -11,6 +11,7 @@ export const CenterBar = () => {
             { (pathname == 'notifications') && <NotificationsPage /> }
             { (pathname == 'profile') && <ProfilePage /> }
             { (pathname == 'settings') && <SettingsPage /> }
+            { (pathname == 'profiles') && <ProfilesPage />}
 
             <TweetModal />
             <EditProfileModal />

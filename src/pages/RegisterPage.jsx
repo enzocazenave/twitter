@@ -38,7 +38,7 @@ export const RegisterPage = () => {
     }
 
     return (
-        <div className="row registerpage-container">
+        <div className="row registerpage-container fadeIn">
             <div className="registerpage-container_image">
                 <i className="fab fa-twitter"></i>
             </div>

@@ -28,6 +28,7 @@ export const AppRouter = () => {
                         <Route path="/explore" element={ <App  /> } />
                         <Route path="/notifications" element={ <App  /> } />
                         <Route path="/profile/:user" element={ <App  /> } />
+                        <Route path="/profiles/:username" element={ <App  /> } />
                         <Route path="/settings" element={ <App  /> } />
                         <Route path="/*" element={ <Navigate to="/home" /> } />
                     </>

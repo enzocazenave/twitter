@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import Modal from 'react-modal';
 import { AuthContext } from '../../context/AuthContext';
 import { UiContext } from '../../context/UiContext';
+import { useAuthContext } from '../../hooks/useAuthContext';
 import { useForm } from '../../hooks/useForm';
 import '../../styles/components/EditProfileModal.css';
 
@@ -34,6 +35,7 @@ export const EditProfileModal = () => {
     const { showEditModal, HIDE_EDIT_MODAL } = useContext(UiContext);
     const { USER } = useContext(AuthContext);
     const [focus, setFocus] = useState(initialState);
+    const { startEdit } = useAuthContext();
 
     const [values, setValues] = useState({ 
         name: USER.name, 
@@ -45,8 +47,6 @@ export const EditProfileModal = () => {
     const setInputvalues = ({ target }) => {
         const { name, value } = target;
 
-        console.log(name, value)
-
         setValues({
             ...values,
             [ name ]: value
@@ -57,6 +57,16 @@ export const EditProfileModal = () => {
         setFocus({
             ...focus,
             [input]: active
+        })
+    }
+
+    const onSubmit = () => {
+        HIDE_EDIT_MODAL();
+        startEdit({ 
+            name: values.name,
+            bio: values.bio,
+            location: values.location,
+            website: values.website
         })
     }
 
@@ -80,7 +90,7 @@ export const EditProfileModal = () => {
                 <button 
                     className="editmodal-nav_edit" 
                     type="button"
-                    onClick={ HIDE_EDIT_MODAL }
+                    onClick={ onSubmit }
                 >
                     Save
                 </button>

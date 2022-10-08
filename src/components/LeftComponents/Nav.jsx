@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthContext';
 import { UiContext } from '../../context/UiContext';
 
 export const Nav = () => {
@@ -7,6 +8,7 @@ export const Nav = () => {
     const { SHOW_TWEET_MODAL } = useContext(UiContext);
     const pathname = window.location.pathname.split('/')[1];
     const navigate = useNavigate();
+    const { USER } = useContext(AuthContext);
 
     const redirect = (path) => navigate(path);
 
@@ -24,7 +26,7 @@ export const Nav = () => {
                 <i className="fas fa-bell"></i>
                 <a className="leftbar-container_menu--item__title" href="#">Notifications</a>
             </li>
-            <li onClick={ () => redirect('/profile/chikicazenave') } className={`leftbar-container_menu--item ${ (pathname == 'profile') && 'leftbar-container_menu--item__selected' }`}>
+            <li onClick={ () => redirect(`/profile/${USER.username}`) } className={`leftbar-container_menu--item ${ (pathname == 'profile') && 'leftbar-container_menu--item__selected' }`}>
                 <i className="fas fa-user-alt"></i>
                 <a className="leftbar-container_menu--item__title" href="#">Profile</a>
             </li>

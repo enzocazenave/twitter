@@ -4,7 +4,7 @@ import { AuthContext } from '../context/AuthContext';
 
 export const useAuthContext = () => {
 
-    const { SET_USER, SET_CHECKING, SET_ERROR_MESSAGE } = useContext(AuthContext); 
+    const { SET_USER, SET_CHECKING, SET_ERROR_MESSAGE, USER } = useContext(AuthContext); 
 
     const startRegister = async({ name, birthdate, email, username, password }) => {
         SET_CHECKING(true);
@@ -56,6 +56,21 @@ export const useAuthContext = () => {
         localStorage.clear();
     }
 
+    const startEdit = async({ name, bio, location, website }) => {
+        try {
+            const dataCompare = { name, bio, location, website, id: USER.id }
+
+            if (USER.name == dataCompare.name && USER.bio == dataCompare.bio && USER.location == dataCompare.location && USER.website == dataCompare.website) return;
+            
+            const { data } = await twitterApi.post('/auth/edit', dataCompare);
+            localStorage.setItem('token', data.token);
+            localStorage.setItem('token-init-date', new Date().getTime());
+            SET_USER(data);
+        } catch(error) {
+            SET_ERROR_MESSAGE(error.response.data.msg || 'An unknown error ocurred');
+        }
+    }
+
     const checkAuthToken = async() => {
         const token = localStorage.getItem('token');
 
@@ -65,9 +80,7 @@ export const useAuthContext = () => {
         }
 
         try {
-            const pathname = window.location.pathname.split('/')[1];
             const { data } = await twitterApi.get('/auth/renew');
-            data.pathname = pathname;
             SET_USER(data);
         } catch(error) {
             localStorage.clear();
@@ -80,7 +93,7 @@ export const useAuthContext = () => {
         startLogin,
         startRegister,
         startLogout,
-        checkAuthToken
-        
+        startEdit,
+        checkAuthToken    
     }
 }
