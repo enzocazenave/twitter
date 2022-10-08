@@ -16,7 +16,7 @@ export const ExplorePage = () => {
             <SearchInput />
             {
                 SEARCHED_USERS.map(user => (
-                    <SearchedUser key={ user.id } { ...user } />
+                    <SearchedUser key={ user._id } { ...user } />
                 ))    
             }
         </>
