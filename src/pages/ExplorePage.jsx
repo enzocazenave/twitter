@@ -1,7 +1,11 @@
+import { useContext } from 'react';
 import { useEffect } from 'react';
 import { SearchInput, SearchedUser } from '../components/CenterComponents';
+import { TweetsContext } from '../context/TweetsContext';
 
 export const ExplorePage = () => {
+
+    const { SEARCHED_USERS } = useContext(TweetsContext);
 
     useEffect(() => {
         document.title = 'Explore / Twitter'
@@ -10,10 +14,11 @@ export const ExplorePage = () => {
     return (
         <>
             <SearchInput />
-            <SearchedUser />
-            <SearchedUser />
-            <SearchedUser />
-            <SearchedUser />
+            {
+                SEARCHED_USERS.map(user => (
+                    <SearchedUser key={ user.id } { ...user } />
+                ))    
+            }
         </>
     )
 }

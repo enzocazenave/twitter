@@ -226,6 +226,7 @@
     align-items: center;
     padding: 15px;
     transition: background .3s;
+    overflow: hidden;
 }
 
 .centerbar-container_searcheduser:hover {
@@ -261,6 +262,8 @@
 .centerbar-container_searcheduser--user__biography {
     margin: 0;
     color: rgb(117, 128, 139);
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .centerbar-container_notification {
