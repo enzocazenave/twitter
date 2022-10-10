@@ -6,7 +6,7 @@ import { TweetsContext } from '../context/TweetsContext';
 export const useTweetsContext = () => {
 
     const { USER, SET_ERROR_MESSAGE } = useContext(AuthContext);
-    const { ADD_TWEET, SET_TWEETS, SET_SEARCHED_USERS } = useContext(TweetsContext);
+    const { ADD_TWEET, SET_TWEETS, SET_SEARCHED_USERS, SET_SUGGESTED_USERS } = useContext(TweetsContext);
 
     const startCreate = async({ text }) => {
         try {
@@ -29,7 +29,7 @@ export const useTweetsContext = () => {
 
     const getProfileAllInfo = async({ username }) => {
         try {
-            const { data } = await twitterApi.post('/all_user', { username });
+            const { data } = await twitterApi.post('/user', { username });
             return data;
             
         } catch(error) {
@@ -46,10 +46,20 @@ export const useTweetsContext = () => {
         }
     }
 
+    const getSuggestedUsers = async() => {
+        try {
+            const { data } = await twitterApi.get('/suggested_users');
+            SET_SUGGESTED_USERS(data.users);
+        } catch(error) {
+            SET_ERROR_MESSAGE(error.response.data?.msg || 'An unknown error ocurred');
+        }
+    }
+
     return {
         startCreate,
         getTweets,
         getProfileAllInfo,
-        getSearchedUsers
+        getSearchedUsers,
+        getSuggestedUsers
     }
 }

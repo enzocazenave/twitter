@@ -4,9 +4,10 @@ import { useTweetsContext } from './hooks/useTweetsContext';
 
 export const App = () => {
 
-    const { getTweets } = useTweetsContext();
+    const { getTweets, getSuggestedUsers } = useTweetsContext();
 
     useEffect(() => { getTweets() }, []);
+    useEffect(() => { getSuggestedUsers() }, []);
 
     return (
         <div className="container">
