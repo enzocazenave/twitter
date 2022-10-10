@@ -8,20 +8,18 @@ export const ProfilePage = () => {
 
     const { TWEETS } = useContext(TweetsContext);
     const { USER } = useContext(AuthContext);
-    const { getTweets } = useTweetsContext();
 
     useEffect(() => {
         document.title = `${USER.name} (@${USER.username})`;
-        getTweets();
     }, []);
 
-    const my_tweets = TWEETS.filter(tweet => tweet.owner == USER.id);
+    const my_tweets = TWEETS.filter(tweet => tweet.owner.id == USER.id);
 
     return (
         <>
             <UserProfile />
             {
-                my_tweets.reverse().map(tweet => ( <Tweet key={ tweet._id } { ...tweet } /> ))
+                my_tweets.map(tweet => ( <Tweet key={ tweet._id } { ...tweet } /> ))
             }
         </>
     )

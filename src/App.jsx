@@ -1,6 +1,13 @@
+import { useEffect } from 'react';
 import { LeftBar, CenterBar, RightBar } from './components/';
+import { useTweetsContext } from './hooks/useTweetsContext';
 
 export const App = () => {
+
+    const { getTweets } = useTweetsContext();
+
+    useEffect(() => { getTweets() }, []);
+
     return (
         <div className="container">
             <div className="row">

@@ -1,29 +1,20 @@
-import { useEffect } from 'react';
-import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useTweetsContext } from '../../hooks/useTweetsContext';
 
-export const Tweet = ({ text, owner, likes }) => {
+export const Tweet = ({ _id, text, likes, owner }) => {
 
-    const { getProfileInfo } = useTweetsContext();
-    const [info, setInfo] = useState({});
     const navigate = useNavigate();
 
-    useEffect(() => {
-        getProfileInfo({ id: owner }).then(data => setInfo(data));
-    }, []);
-
     const onClickTweet = () => {
-        navigate(`/profiles/${info.username}`)
+        navigate(`/profiles/${owner.username}`)
     }
 
     return (
         <div className="centerbar-container_tweet fadeIn" onClick={ onClickTweet } >
-            <img className="centerbar-container_tweet--img" src={ info.profile_img || 'https://d500.epimg.net/cincodias/imagenes/2016/07/04/lifestyle/1467646262_522853_1467646344_noticia_normal.jpg' } />
+            <img className="centerbar-container_tweet--img" src={ owner.profile_img || 'https://d500.epimg.net/cincodias/imagenes/2016/07/04/lifestyle/1467646262_522853_1467646344_noticia_normal.jpg' } />
             <div className="centerbar-container_tweet--post">
                 <div className="centerbar-container_tweet--post__user">
-                    <span className="centerbar-container_tweet--post__user---name">{ info.name }</span>
-                    <span className="centerbar-container_tweet--post__user---username">@{info.username}</span>
+                    <span className="centerbar-container_tweet--post__user---name">{ owner.name }</span>
+                    <span className="centerbar-container_tweet--post__user---username">@{owner.username}</span>
                 </div>
                 
                 <p className="centerbar-container_tweet--post__text">{ text }</p>

@@ -11,8 +11,8 @@ export const TweetsProvider = ({ children }) => {
     const SET_TWEETS = (array_of_tweets) => setTweets(array_of_tweets);
     const ADD_TWEET = (tweet) => {
         setTweets([
-            ...TWEETS,
-            tweet
+            tweet,
+            ...TWEETS
         ])
     } 
 

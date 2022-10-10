@@ -8,15 +8,15 @@ export const UserProfiles = ({ username }) => {
 
     const [data, setData] = useState({});
     const { TWEETS } = useContext(TweetsContext);
-    const { getTweets } = useTweetsContext();
     const { getProfileAllInfo } = useTweetsContext();
 
     useEffect(() => {
         getProfileAllInfo({username}).then(res => setData(res));
-        getTweets();
     }, []);
 
-    const tweets_to_show = TWEETS.filter(tweet => tweet.owner == data.id);
+    
+
+    const tweets_to_show = TWEETS.filter(tweet => tweet.owner.id == data.id);
     
     return (
         <>
@@ -62,7 +62,7 @@ export const UserProfiles = ({ username }) => {
                 </div>
             </div>
             {
-                tweets_to_show.reverse().map(tweet => ( <Tweet key={ tweet._id } { ...tweet } /> ))
+                tweets_to_show.map(tweet => ( <Tweet key={ tweet._id } { ...tweet } /> ))
             }
         </>
     )

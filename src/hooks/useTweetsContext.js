@@ -10,7 +10,8 @@ export const useTweetsContext = () => {
 
     const startCreate = async({ text }) => {
         try {
-            const { data } = await twitterApi.post('/tweets', { owner: USER.id, text });
+            const { id, profile_img, name, username } = USER;
+            const { data } = await twitterApi.post('/tweets', { owner: { id, profile_img, name, username }, text });
             ADD_TWEET(data.tweet);
         } catch(error) {
             SET_ERROR_MESSAGE(error.response.data?.msg || 'An unknown error ocurred');
@@ -21,15 +22,6 @@ export const useTweetsContext = () => {
         try {
             const { data } = await twitterApi.get('/tweets');
             SET_TWEETS(data.tweets);
-        } catch(error) {
-            SET_ERROR_MESSAGE(error.response.data?.msg || 'An unknown error ocurred');
-        }
-    }
-
-    const getProfileInfo = async({ id }) => {
-        try { 
-            const { data } = await twitterApi.post('/user', { id });
-            return data;
         } catch(error) {
             SET_ERROR_MESSAGE(error.response.data?.msg || 'An unknown error ocurred');
         }
@@ -57,7 +49,6 @@ export const useTweetsContext = () => {
     return {
         startCreate,
         getTweets,
-        getProfileInfo,
         getProfileAllInfo,
         getSearchedUsers
     }
